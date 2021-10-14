@@ -1,8 +1,8 @@
-import { TOGGLE_MODAL } from './mutation-types'
+import { MODAL_DATA } from './mutation-types'
 
 const stateActions = () => ({
-  TOGGLE_MODAL ({ commit }, data) {
-    commit(TOGGLE_MODAL, data)
+  MODAL_DATA ({ commit }, data) {
+    commit(MODAL_DATA, data)
   }
 })
 

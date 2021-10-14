@@ -26,9 +26,14 @@ export default {
   methods: {
     onSubmit(event) {
       event.preventDefault();
-      console.log(this.image);
-      console.log(this.message);
-      console.log(this.color);
+      if (this.image && this.message && this.color) { 
+        const data = {
+          image: this.images[this.image].url,
+          message: this.message,
+          color: this.color
+        };
+        this.$store.commit('MODAL_DATA', data);
+      }
     }
   }
 };

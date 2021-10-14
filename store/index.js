@@ -2,7 +2,7 @@ import storeActions from './storeActions'
 import storeMutations from './storeMutations'
 
 export const state = () => ({
-  modalActive: false
+  modalData: null
 })
 
 export const actions = storeActions()

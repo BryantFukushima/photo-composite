@@ -1,8 +1,8 @@
-import { TOGGLE_MODAL } from './mutation-types.js'
+import { MODAL_DATA } from './mutation-types.js'
 
 const stateMutations = () => ({
-  [TOGGLE_MODAL] (state, data) {
-    state.modalActive = data
+  [MODAL_DATA] (state, data) {
+    state.modalData = data
   }
 })
 
