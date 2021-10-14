@@ -5,7 +5,6 @@ export default {
   name: "UserForm",
   data: () => ({
     color: "#000000",
-    activeImage: null,
     image: null,
     images: [
       {
@@ -24,15 +23,21 @@ export default {
     message: ""
   }),
   methods: {
+    clearData() {
+      (this.image = null), (this.message = ""), (this.color = "");
+    },
     onSubmit(event) {
+      console.log("hi");
       event.preventDefault();
-      if (this.image && this.message && this.color) { 
+      if (this.image && this.message && this.color) {
         const data = {
-          image: this.images[this.image].url,
+          image_src: this.images[this.image].url,
+          image_alt: this.images[this.image].alt,
           message: this.message,
           color: this.color
         };
-        this.$store.commit('MODAL_DATA', data);
+        this.$store.commit("MODAL_DATA", data);
+        this.clearData();
       }
     }
   }

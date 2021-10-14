@@ -1,3 +1,9 @@
-.modal(:class='{ "modal--active": $store.state.modalData }')
-  .modal__overlay
-    pre {{$store.state.modalData}}
+transition(name='fade')
+  .modal(v-if='$store.state.modalData')
+    .modal__overlay(@click='closeModal()')
+    .modal__container
+      .modal__comp
+        img.modal__comp-image(:src='$store.state.modalData.image_src', :alt='$store.state.modalData.image_alt')
+        .modal__comp-overlay(:style='{ background: $store.state.modalData.color }')
+        .modal__comp-text(v-html='$store.state.modalData.message')
+        
