@@ -1,13 +1,14 @@
-<template lang='pug'>
-  .site
-    h1 test
+<template lang="pug">
+  .page-home
+    UserForm
 </template>
 
 <script>
-export default {}
-</script>
+import UserForm from '~/components/UserForm'
 
-<style lang="sass">
-.site
-  background: blue
-</style>
+export default {
+  components: {
+    UserForm
+  }
+};
+</script>

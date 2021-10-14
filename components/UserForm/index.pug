@@ -1,0 +1,19 @@
+.user-form
+  h1.user-form__title Photo Composite
+  .user-form__intro Fill out the fields below and hit "GO" to generate your photo composite.
+  form.user-form__form(id='userform', @submit='onSubmit')
+    fieldset.user-form__form-group--fieldset
+      .user-form__form-group(v-for='(img, i) in images', :key='"img-" + i')
+        label.user-form__form-label
+          input.user-form__form-input.user-form__form-input--radio(type='radio', name='image', :id='"img" + i', v-model='image', :value='i' required)
+          img.user-form__form-image(:ref='"img-" + i', :src="img.url", alt="img.alt")
+
+    .user-form__form-group
+      label.user-form__form-label(for='message') Enter Your Message
+      input.user-form__form-input.user-form__form-input--message(type='text', name='message', id='message', v-model='message', required)
+
+    .user-form__form-group
+      label.user-form__form-label(for='color') Choose Overlay Color
+      input.user-form__form-input.user-form__form-input--color(type='color', name='color', id='color', v-model='color', required)
+
+    button.user-form__form-submit(type='submit') GO
