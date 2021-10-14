@@ -10,30 +10,27 @@ export default {
     images: [
       {
         url: "https://assets.imgix.net/examples/butterfly.jpg",
-        alt: "Butterfly",
+        alt: "Butterfly"
       },
       {
         url: "https://assets.imgix.net/unsplash/bridge.jpg",
-        alt: "Bridge",
+        alt: "Bridge"
       },
       {
         url: "https://assets.imgix.net/unsplash/pineneedles.jpg",
-        alt: "pineneedles",
-      },
+        alt: "pineneedles"
+      }
     ],
-    message: "",
+    message: ""
   }),
-  mounted() {
-    // console.log(this.$store.state.modalActive);
-  },
   methods: {
     onSubmit(event) {
       event.preventDefault();
       console.log(this.image);
       console.log(this.message);
       console.log(this.color);
-    },
-  },
+    }
+  }
 };
 </script>
 
