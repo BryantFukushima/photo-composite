@@ -16,14 +16,36 @@
     background: $ol1
     z-index: -1
     cursor: pointer
+    backdrop-filter: blur(10px)
+    -webkit-backdrop-filter: blur(10px)
 
   &__container
+    position: relative
+    margin: 0 2rem
+
+  &__wrapper
+    @media screen and (max-width: 1024px)
+      padding: 2rem 2rem
     display: flex
-    align-items: center
     justify-content: center
     border-radius: 25px
     background: #eefdff
     padding: 3rem 7rem
+    max-height: 50vh
+    overflow: auto
+    -ms-overflow-style: none
+    scrollbar-width: none
+
+    &::-webkit-scrollbar 
+      display: none
+
+  &__close
+    position: absolute
+    top: -2rem
+    right: 1.5rem
+    cursor: pointer
+    color: white
+    font-size: 1.125rem
 
   &__comp
     display: flex
