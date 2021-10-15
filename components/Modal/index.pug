@@ -4,8 +4,10 @@ transition(name='fade')
     .modal__container
       .modal__close(@click='closeModal()') close
       .modal__wrapper
-        .modal__comp
+        .modal__comp#canvas
           img.modal__comp-image(:src='$store.state.modalData.image_src', :alt='$store.state.modalData.image_alt')
           .modal__comp-overlay(:style='{ background: $store.state.modalData.color }')
           .modal__comp-text(v-if='$store.state.modalData.message', v-html='$store.state.modalData.message')
+        .modal__download
+          a.modal__download-btn(href='', download='composite-img.jpg') Download
         
