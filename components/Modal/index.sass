@@ -52,9 +52,6 @@
     @media screen and (max-width: 900px)
       width: 100%
       height: calc((80vw - 4rem) * .665625)
-    display: flex
-    align-items: center
-    justify-content: center
     position: relative
     z-index: 1
     width: 640px
@@ -63,18 +60,20 @@
     &-image
       @extend %absolute
       object-fit: cover
-      z-index: -2
     
     &-overlay
       @extend %absolute
       opacity: 0.5
-      z-index: -1
 
     &-text
-      z-index: 1
+      @extend %centered
       color: #fff
       font-family: Arial, Helvetica, sans-serif
       font-size: 48px
+      z-index: 2
+
+  &__canvas
+    display: none
 
   &__download
     text-align: center

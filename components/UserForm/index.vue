@@ -24,10 +24,6 @@ export default {
     message: ""
   }),
   methods: {
-    freezeScroll() {
-      const docBody = document.querySelector('body')
-      console.log(docBody)
-    },
     resetData() {
       this.image = null;
       this.message = "";
@@ -45,11 +41,9 @@ export default {
         };
         this.$store.commit("MODAL_DATA", data);
         this.resetData();
-        this.freezeScroll();
       } else {
         this.errors = true;
       }
-      console.log("hi");
     }
   }
 };
