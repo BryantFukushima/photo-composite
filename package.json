@@ -1,5 +1,5 @@
 {
-  "name": "testsite",
+  "name": "photo-composite",
   "version": "1.0.0",
   "private": true,
   "scripts": {
@@ -9,6 +9,7 @@
     "generate": "nuxt generate"
   },
   "dependencies": {
+    "@nuxtjs/google-fonts": "^1.3.0",
     "@nuxtjs/style-resources": "^1.2.1",
     "core-js": "^3.15.1",
     "nuxt": "^2.15.7"

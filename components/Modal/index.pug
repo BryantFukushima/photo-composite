@@ -5,5 +5,5 @@ transition(name='fade')
       .modal__comp
         img.modal__comp-image(:src='$store.state.modalData.image_src', :alt='$store.state.modalData.image_alt')
         .modal__comp-overlay(:style='{ background: $store.state.modalData.color }')
-        .modal__comp-text(v-html='$store.state.modalData.message')
+        .modal__comp-text(v-if='$store.state.modalData.message', v-html='$store.state.modalData.message')
         

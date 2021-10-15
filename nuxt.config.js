@@ -18,6 +18,11 @@ export default {
     ],
     link: [{ rel: "icon", type: "image/x-icon", href: "/favicon.ico" }]
   },
+  googleFonts: {
+    families: {
+      Montserrat: true
+    }
+  },
   css: [
     "~/styles/static/reset.sass",
     "~/styles/static/static.sass",
@@ -28,7 +33,7 @@ export default {
   },
   plugins: [],
   components: true,
-  buildModules: [],
+  buildModules: ['@nuxtjs/google-fonts'],
   modules: ["@nuxtjs/style-resources"],
   build: {}
 };

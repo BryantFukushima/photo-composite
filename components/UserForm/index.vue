@@ -4,7 +4,8 @@
 export default {
   name: "UserForm",
   data: () => ({
-    color: "#000000",
+    color: "#0088d2",
+    errors: false,
     image: null,
     images: [
       {
@@ -23,22 +24,27 @@ export default {
     message: ""
   }),
   methods: {
-    clearData() {
-      (this.image = null), (this.message = ""), (this.color = "");
+    resetData() {
+      this.image = null;
+      this.message = "";
+      this.color = "#0088d2";
+      this.errors = false;
     },
     onSubmit(event) {
-      console.log("hi");
       event.preventDefault();
-      if (this.image && this.message && this.color) {
+      if (this.image) {
         const data = {
-          image_src: this.images[this.image].url,
-          image_alt: this.images[this.image].alt,
+          image_src: this.images[this.image - 1].url,
+          image_alt: this.images[this.image - 1].alt,
           message: this.message,
           color: this.color
         };
         this.$store.commit("MODAL_DATA", data);
-        this.clearData();
+        this.resetData();
+      } else {
+        this.errors = true;
       }
+      console.log("hi");
     }
   }
 };
