@@ -3,7 +3,7 @@
     h1.user-form__title Photo Composite
     form.user-form__form(id='userform')
       fieldset.user-form__form-fieldset
-        legend.user-form__form-legend Select an image
+        legend.user-form__form-legend Select an image:
         .user-form__form-image-col(v-for='(img, i) in images', :key='"img-" + i')
           label.user-form__form-image-label
             input.user-form__form-radio(type='radio', name='image', :id='"img" + i', v-model='image', :value='i + 1' required)
@@ -12,11 +12,11 @@
           .user-form__form-error(v-if='errors') Please select an image.
 
       .user-form__form-group
-        label.user-form__form-label(for='message') Enter Your Message
+        label.user-form__form-label(for='message') Enter your message:
         input.user-form__form-input.user-form__form-input--message(type='text', name='message', id='message', v-model='message')
 
       .user-form__form-group.user-form__form-group--row
-        label.user-form__form-label(for='color') Choose Overlay Color
+        label.user-form__form-label(for='color') Choose overlay color:
         input.user-form__form-input.user-form__form-input--color(type='color', name='color', id='color', v-model='color', required)
 
       button.user-form__form-submit(@click='onSubmit') GO
